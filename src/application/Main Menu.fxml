@@ -33,16 +33,16 @@
               </rowConstraints>
                <children>
                   <ImageView fitHeight="150.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" scaleX="0.95">
-                     <image>
-                        <Image url="@../../../../../../../Downloads/donuts-getty-0619.jpg" />
-                     </image>
                      <GridPane.margin>
                         <Insets left="25.0" />
                      </GridPane.margin>
+                     <image>
+                        <Image url="@../../Images/donuts-getty-0619.jpg" />
+                     </image>
                   </ImageView>
                   <ImageView fitHeight="150.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" scaleX="0.7" GridPane.rowIndex="2">
                      <image>
-                        <Image url="@../../../../../../../Downloads/istockphoto-954537590-612x612.jpg" />
+                        <Image url="@../../Images/istockphoto-954537590-612x612.jpg" />
                      </image>
                   </ImageView>
                   <GridPane maxHeight="70.0" minHeight="70.0" prefHeight="70.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -53,6 +53,9 @@
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" />
+                     </children>
                   </GridPane>
                </children>
             </GridPane>
