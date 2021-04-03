@@ -15,6 +15,12 @@ import javafx.stage.StageStyle;
 public class MMController {
 	@FXML
 	private ImageView mmDonutImage;
+	
+	@FXML
+	private ImageView YourOrderImage;
+	
+	@FXML
+	private ImageView StoreOrders;
 
 	// Event Listener on ImageView[#mmDonutImage].onMouseClicked
 	@FXML
@@ -32,7 +38,7 @@ public class MMController {
 		}
 	}
 	
-	// Event Listener on ImageView[#mmDonutImage].onMouseClicked
+	// Event Listener on ImageView[#mmCoffeeImage].onMouseClicked
 		@FXML
 		public void openCoffeePage(MouseEvent event) {
 			try {
@@ -40,6 +46,39 @@ public class MMController {
 				Parent root1 = (Parent) fxmlLoader.load();
 				Stage stage = new Stage();
 				stage.setTitle("Coffee Menu");
+				stage.setScene(new Scene(root1));  
+				stage.show();
+			}
+			catch (Exception e) {
+				System.out.println("EXCEPTION GENT");
+			}
+		}
+		
+		
+		// Event Listener on ImageView[#mmYourOrdersImage].onMouseClicked
+		@FXML
+		public void openYourOrdersPage(MouseEvent event) {
+			try {
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Current order detail.fxml"));
+				Parent root1 = (Parent) fxmlLoader.load();
+				Stage stage = new Stage();
+				stage.setTitle("Your Orders");
+				stage.setScene(new Scene(root1));  
+				stage.show();
+			}
+			catch (Exception e) {
+				System.out.println("EXCEPTION GENT");
+			}
+		}
+		
+		// Event Listener on ImageView[#mmStoreOrdersImage].onMouseClicked
+		@FXML
+		public void openStoreOrdersPage(MouseEvent event) {
+			try {
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Store orders page.fxml"));
+				Parent root1 = (Parent) fxmlLoader.load();
+				Stage stage = new Stage();
+				stage.setTitle("Store Orders");
 				stage.setScene(new Scene(root1));  
 				stage.show();
 			}
