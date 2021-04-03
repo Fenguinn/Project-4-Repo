@@ -26,8 +26,29 @@ public class MenuItem {
 		return this.price;
 	}
 	
+	
+	/**
+	 * 
+	 * @param number
+	 */
+	public void setPrice(double number) {
+		this.price = number;
+	}
+	
+	/**
+	 * 
+	 * @param number
+	 */
 	public void setQuantity(int number) {
 		this.quantity = number;
+	}
+	
+	/**
+	 * 
+	 * @param number
+	 */
+	public void incrementQuantity(int number) {
+		this.quantity += number;
 	}
 
 }
