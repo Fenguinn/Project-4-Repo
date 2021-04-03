@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -32,4 +33,22 @@ public class MMController {
 			System.out.println("EXCEPTION GENT");
 		}
 	}
+	
+	// Event Listener on ImageView[#mmDonutImage].onMouseClicked
+		@FXML
+		public void openCoffeePage(MouseEvent event) {
+			try {
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Ordering Coffee.fxml"));
+				Parent root1 = (Parent) fxmlLoader.load();
+				Stage stage = new Stage();
+				stage.setTitle("Coffee Menu");
+				stage.setScene(new Scene(root1));  
+				stage.show();
+			}
+			catch (Exception e) {
+				System.out.println("EXCEPTION GENT");
+			}
+		}
+	
+	
 }

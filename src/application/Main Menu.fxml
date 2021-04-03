@@ -38,7 +38,7 @@
                   <Image url="@../../Images/donuts-getty-0619.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" scaleX="0.7" GridPane.columnIndex="1">
+            <ImageView fx:id="mmCoffeeImage" fitHeight="150.0" fitWidth="217.0" onMouseClicked="#openCoffeePage" pickOnBounds="true" preserveRatio="true" scaleX="0.7" GridPane.columnIndex="1">
                <image>
                   <Image url="@../../Images/istockphoto-954537590-612x612.jpg" />
                </image>
