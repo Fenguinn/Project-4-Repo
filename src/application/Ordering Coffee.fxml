@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="500.0" maxWidth="500.0" minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: sandybrown;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CoffeeController">
    <top>
       <Label text="Ordering Coffee" BorderPane.alignment="CENTER">
@@ -24,7 +23,10 @@
       </Label>
    </top>
    <bottom>
-      <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+      <Button fx:id="AddToOrderButton" mnemonicParsing="false" text="Add to Order" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="15.0" />
+         </BorderPane.margin></Button>
    </bottom>
    <center>
       <GridPane BorderPane.alignment="CENTER">

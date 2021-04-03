@@ -8,6 +8,8 @@ import javafx.scene.control.ComboBox;
 
 import javafx.scene.control.CheckBox;
 
+import javafx.scene.control.Button;
+
 public class CoffeeController {
 	public final static int ONE = 1;
 	public final static int TWO = 2;
@@ -38,6 +40,9 @@ public class CoffeeController {
 	private ComboBox<String> CoffeeSize;
 	@FXML
 	private ComboBox<Integer> NumberOfCoffee;
+	@FXML
+	private Button AddToOrderButton;
+	
 	
 	/**
 	 * 
