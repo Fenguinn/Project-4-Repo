@@ -32,7 +32,7 @@ public class Coffee extends MenuItem implements Customizable  {
 	 */
 	@Override 
 	public double itemPrice() {
-		return this.price + (this.size * PRICE_PER_SIZE_UP) + (this.numOfAddIns * PRICE_PER_ADD_IN);
+		return (this.price + (this.size * PRICE_PER_SIZE_UP) + (this.numOfAddIns * PRICE_PER_ADD_IN)) * super.quantity;
 	}
 	
 	
@@ -116,6 +116,71 @@ public class Coffee extends MenuItem implements Customizable  {
 	 */
 	@Override
 	public String toString() {
-		return ;
+		String myCoffee = "Coffee (" + this.quantity + ") ";
+		switch(this.size) 
+		{
+			case SHORT:
+				myCoffee = myCoffee + "Short ";
+				break;
+			case TALL:
+				myCoffee = myCoffee + "Tall ";
+				break;
+			case GRANDE:
+				myCoffee = myCoffee + "Grande ";
+				break;
+			case VENTI:
+				myCoffee = myCoffee + "Venti ";
+				break;
+		}
+		
+		if (this.numOfAddIns > 0) {
+			int numCommas = this.numOfAddIns - ONE;
+			myCoffee = myCoffee + "[";
+			
+			if (this.cream) {
+				myCoffee = myCoffee + "Cream";
+				if (numCommas > 0) {
+					myCoffee = myCoffee + ", ";
+					numCommas--;
+				}
+			}
+			
+			if (this.syrup) {
+				myCoffee = myCoffee + "Syrup";
+				if (numCommas > 0) {
+					myCoffee = myCoffee + ", ";
+					numCommas--;
+				}
+			}
+			
+			if (this.milk) {
+				myCoffee = myCoffee + "Milk";
+				if (numCommas > 0) {
+					myCoffee = myCoffee + ", ";
+					numCommas--;
+				}
+			}
+			
+			if (this.caramel) {
+				myCoffee = myCoffee + "Caramel";
+				if (numCommas > 0) {
+					myCoffee = myCoffee + ", ";
+					numCommas--;
+				}
+			}
+			
+			if (this.whippedCream) {
+				myCoffee = myCoffee + "Whipped Cream";
+				if (numCommas > 0) {
+					myCoffee = myCoffee + ", ";
+					numCommas--;
+				}
+			}
+			
+			myCoffee = myCoffee + "]";
+			
+		}
+		
+		return myCoffee;
 	}
 }
