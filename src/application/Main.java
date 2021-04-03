@@ -1,10 +1,16 @@
 package application;
 	
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.control.ComboBox;
+import application.MMController;
+import application.orderDonutController;
+import application.currentOrderController;
+import application.storeOrderController;
+
 
 
 public class Main extends Application {
@@ -25,9 +31,10 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
+			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Main Menu.fxml"));
+			Scene scene = new Scene(root,1000,800);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setTitle("Main Menu");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
