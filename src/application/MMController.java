@@ -20,14 +20,12 @@ public class MMController {
 	@FXML
 	public void openDonutPage(MouseEvent event) {
 		try {
-		    FXMLLoader fxmlLoader = new FXMLLoader(orderDonutController.class.getResource("Ordering Donuts.fxml"));
-		    Parent root1 = (Parent) fxmlLoader.load();
-		    Stage stage = new Stage();
-		    stage.initModality(Modality.APPLICATION_MODAL);
-		    stage.initStyle(StageStyle.UNDECORATED);
-		    stage.setTitle("Donut Menu");
-		    stage.setScene(new Scene(root1));  
-		    stage.show();
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Ordering Donuts.fxml"));
+			Parent root1 = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setTitle("Donut Menu");
+			stage.setScene(new Scene(root1));  
+			stage.show();
 		}
 		catch (Exception e) {
 			System.out.println("EXCEPTION GENT");
