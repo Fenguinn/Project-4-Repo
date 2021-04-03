@@ -1,6 +1,6 @@
 package application;
 	
-import javafx.application.Application;
+import javafx.application.Application; 
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -9,19 +9,9 @@ import javafx.scene.layout.BorderPane;
 
 
 
+
+
 public class Main extends Application {
-	public final static int ONE = 1;
-	public final static int TWO = 2;
-	public final static int THREE = 3;
-	public final static int FOUR = 4;
-	public final static int FIVE = 5;
-	public final static int SIX = 6;
-	public final static int SEVEN = 7;
-	public final static int EIGHT = 8;
-	public final static int NINE = 9;
-	public final static int TEN = 10;
-	public final static int ELEVEN = 11;
-	public final static int TWELVE = 12;
 	
 	
 	@Override
