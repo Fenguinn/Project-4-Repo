@@ -36,7 +36,7 @@
           <RowConstraints maxHeight="128.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ComboBox fx:id="donutTypeComboBox" prefWidth="150.0" promptText="Donut Type">
+            <ComboBox fx:id="donutTypeComboBox" onAction="#pickedType" prefWidth="150.0" promptText="Donut Type">
                <GridPane.margin>
                   <Insets left="15.0" />
                </GridPane.margin>

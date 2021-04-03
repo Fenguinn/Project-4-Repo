@@ -51,6 +51,24 @@ public class orderingDonutController {
 	public void initialize() {
 		donutTypeComboBox.getItems().addAll("Yeast" , "Donut Hole", "Cake Donut");
 		numDonutComboBox.getItems().addAll(ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE);
-		listDonutFlavor.getItems().addAll("Jelly Creampie", "Boston Creampie (Extra thicc)", "Strawberry Lemon Swirl");
+		
 	}
+	
+	@FXML
+	public void pickedType() {
+		if (donutTypeComboBox.getValue() == "Yeast") {
+			listDonutFlavor.getItems().clear();
+			listDonutFlavor.getItems().addAll("Jelly Filled", "Boston Kreme", "Strawberry Lemon Swirl");
+		}
+		else if (donutTypeComboBox.getValue() == "Donut Hole") {
+			listDonutFlavor.getItems().clear();
+			listDonutFlavor.getItems().addAll("Choco-Loco", "Glazed Goddess", "Berry Beautiful");
+		}
+		else if (donutTypeComboBox.getValue() == "Cake Donut") {
+			listDonutFlavor.getItems().clear();
+			listDonutFlavor.getItems().addAll("Maple Frosted", "Blueberry Cake", "Ice Cream Cake");
+		}
+		
+	}
+	
 }
