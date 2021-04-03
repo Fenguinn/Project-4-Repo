@@ -51,7 +51,6 @@ public class orderingDonutController {
 	public void initialize() {
 		donutTypeComboBox.getItems().addAll("Yeast" , "Donut Hole", "Cake Donut");
 		numDonutComboBox.getItems().addAll(ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE);
-		
 	}
 	
 	@FXML
