@@ -10,7 +10,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import application.orderDonutController;
 
 public class MMController {
 	@FXML
@@ -20,7 +19,7 @@ public class MMController {
 	@FXML
 	public void openDonutPage(MouseEvent event) {
 		try {
-		    FXMLLoader fxmlLoader = new FXMLLoader(orderDonutController.class.getResource("Ordering Donuts.fxml"));
+		    FXMLLoader fxmlLoader = new FXMLLoader(CoffeeController.class.getResource("Ordering Coffee.fxml"));
 		    Parent root1 = (Parent) fxmlLoader.load();
 		    Stage stage = new Stage();
 		    stage.initModality(Modality.APPLICATION_MODAL);
