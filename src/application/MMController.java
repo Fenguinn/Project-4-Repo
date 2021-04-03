@@ -19,7 +19,7 @@ public class MMController {
 	@FXML
 	public void openDonutPage(MouseEvent event) {
 		try {
-		    FXMLLoader fxmlLoader = new FXMLLoader(CoffeeController.class.getResource("Ordering Coffee.fxml"));
+		    FXMLLoader fxmlLoader = new FXMLLoader(orderDonutController.class.getResource("Ordering Donuts.fxml"));
 		    Parent root1 = (Parent) fxmlLoader.load();
 		    Stage stage = new Stage();
 		    stage.initModality(Modality.APPLICATION_MODAL);
