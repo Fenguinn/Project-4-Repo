@@ -21,13 +21,30 @@ public class Order implements Customizable {
 	public void calculatePayment() {
 		this.subtotal =0;
 		for (int i=0; i<items.size(); i++) {
-			this.subtotal += items.get(i).getPrice();
+			this.subtotal += items.get(i).itemPrice();
 		}
 		
 		salesTax = subtotal * NJTAX;
 		total = salesTax + subtotal;
+
+	}
+	
+	public String getSubtotal() {
+		MenuItem item = new MenuItem();
+		return item.formatPrice(this.subtotal);
+	}
+
+	public String getTotal() {
+		MenuItem item = new MenuItem();
+		return item.formatPrice(this.total);
 		
 	}
+	public String getSalesTax() {
+		MenuItem item = new MenuItem();
+		return item.formatPrice(this.salesTax);
+	}
+	
+	
 	
 	
 	

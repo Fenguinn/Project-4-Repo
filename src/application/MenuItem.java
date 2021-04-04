@@ -1,5 +1,7 @@
 package application;
 
+import java.text.DecimalFormat;
+
 public class MenuItem {
 	private double price;
 	private int quantity;
@@ -67,5 +69,11 @@ public class MenuItem {
 	public void incrementQuantity(int number) {
 		this.quantity += number;
 	}
+	
+	public String formatPrice(double price) {
+        DecimalFormat df = new DecimalFormat("$#,##0.00");
+        String formattedPay = df.format(price);
+        return formattedPay;
+    }
 
 }

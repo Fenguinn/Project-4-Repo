@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="500.0" maxWidth="500.0" minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: sandybrown;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CoffeeController">
+<BorderPane maxHeight="500.0" maxWidth="500.0" minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: sandybrown;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CoffeeController">
    <top>
       <Label text="Ordering Coffee" BorderPane.alignment="CENTER">
          <font>
@@ -23,7 +23,7 @@
       </Label>
    </top>
    <bottom>
-      <Button fx:id="AddToOrderButton" mnemonicParsing="false" text="Add to Order" BorderPane.alignment="CENTER">
+      <Button fx:id="AddToOrderButton" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="15.0" />
          </BorderPane.margin></Button>
@@ -58,34 +58,34 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <CheckBox fx:id="Cream" mnemonicParsing="false" text="Cream">
+                  <CheckBox fx:id="Cream" mnemonicParsing="false" onAction="#handleCream" text="Cream">
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
                   </CheckBox>
-                  <CheckBox fx:id="Syrup" mnemonicParsing="false" text="Syrup" GridPane.columnIndex="1">
+                  <CheckBox fx:id="Syrup" mnemonicParsing="false" onAction="#handleSyrup" text="Syrup" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
                   </CheckBox>
-                  <CheckBox fx:id="Milk" mnemonicParsing="false" text="Milk" GridPane.rowIndex="1">
+                  <CheckBox fx:id="Milk" mnemonicParsing="false" onAction="#handleMilk" text="Milk" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
                   </CheckBox>
-                  <CheckBox fx:id="Caramel" mnemonicParsing="false" text="Caramel" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <CheckBox fx:id="Caramel" mnemonicParsing="false" onAction="#handleCaramel" text="Caramel" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
                   </CheckBox>
-                  <CheckBox fx:id="WhippedCream" mnemonicParsing="false" text="Whipped Cream" GridPane.rowIndex="2">
+                  <CheckBox fx:id="WhippedCream" mnemonicParsing="false" onAction="#handleWhippedCream" text="Whipped Cream" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
                   </CheckBox>
                   <TextField fx:id="RunningTotal" editable="false" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <ComboBox fx:id="CoffeeSize" prefWidth="150.0" visibleRowCount="4" GridPane.columnIndex="2" />
-                  <ComboBox fx:id="NumberOfCoffee" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="CoffeeSize" onAction="#handleSize" prefWidth="150.0" promptText="Short" visibleRowCount="4" GridPane.columnIndex="2" />
+                  <ComboBox fx:id="NumberOfCoffee" onAction="#handleQuantity" prefWidth="150.0" promptText="1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </children>

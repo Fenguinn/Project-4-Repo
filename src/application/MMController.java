@@ -13,6 +13,17 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class MMController {
+	
+	public static Order myOrder = new Order();
+	
+	/**
+	 * 
+	 */
+	@FXML
+	public void initialize() {
+		//myOrder = new Order();
+	}
+	
 	@FXML
 	private ImageView mmDonutImage;
 	

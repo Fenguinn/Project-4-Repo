@@ -9,6 +9,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 
 public class CurrentOrderController {
+	
+	
+	
+	
+	
 	@FXML
 	private TextArea TextArea;
 	@FXML
@@ -22,4 +27,23 @@ public class CurrentOrderController {
 	@FXML
 	private Button PlaceOrderButton;
 
+	@FXML
+	private void initialize() {
+		update();
+	}
+	
+	@FXML
+	private void update() {
+		MMController.myOrder.calculatePayment();
+		TextArea.clear();
+		TextArea.appendText(MMController.myOrder.toString() + "\n");
+		
+		
+		SubTotalBox.setText(""+MMController.myOrder.getSubtotal());
+		TaxBox.setText(""+MMController.myOrder.getSalesTax());	
+		TotalBox.setText(""+MMController.myOrder.getTotal());	
+	}
+	
+	
+	
 }
