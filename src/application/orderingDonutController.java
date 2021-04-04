@@ -61,7 +61,7 @@ public class orderingDonutController {
 		}
 		else if (donutTypeComboBox.getValue() == "Donut Hole") {
 			listDonutFlavor.getItems().clear();
-			listDonutFlavor.getItems().addAll("Choco-Loco", "Glazed Goddess", "Berry Beautiful");
+			listDonutFlavor.getItems().addAll("Choco-Loco", "Glazed", "Berry Beautiful");
 		}
 		else if (donutTypeComboBox.getValue() == "Cake Donut") {
 			listDonutFlavor.getItems().clear();

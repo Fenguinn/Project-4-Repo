@@ -1,8 +1,8 @@
 package application;
 
 public class MenuItem {
-	double price;
-	int quantity;
+	private double price;
+	private int quantity;
 	
 	/**
 	 * The default constructor for a instance of an menu item class.
@@ -23,7 +23,7 @@ public class MenuItem {
 	 * @return price, a double containing the price of the item
 	 */
 	public double itemPrice() {
-		return this.price;
+		return this.price * this.quantity;
 	}
 	
 	
@@ -37,10 +37,27 @@ public class MenuItem {
 	
 	/**
 	 * 
+	 * @return price
+	 */
+	public double getPrice() {
+		return this.price;
+	}
+	
+	
+	/**
+	 * 
 	 * @param number
 	 */
 	public void setQuantity(int number) {
 		this.quantity = number;
+	}
+	
+	/**
+	 * 
+	 * @return quantity
+	 */
+	public int getQuantity() {
+		return this.quantity;
 	}
 	
 	/**

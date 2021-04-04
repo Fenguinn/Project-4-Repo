@@ -9,6 +9,7 @@ public class Coffee extends MenuItem implements Customizable  {
 	private static final int GRANDE = 3;
 	private static final int VENTI = 4;
 	private static final int ONE = 1;
+	private static final int ELEVEN = 11;
 	
 	private boolean cream;
 	private boolean milk;
@@ -32,7 +33,7 @@ public class Coffee extends MenuItem implements Customizable  {
 	 */
 	@Override 
 	public double itemPrice() {
-		return (this.price + (this.size * PRICE_PER_SIZE_UP) + (this.numOfAddIns * PRICE_PER_ADD_IN)) * super.quantity;
+		return (this.getPrice() + (this.size * PRICE_PER_SIZE_UP) + (this.numOfAddIns * PRICE_PER_ADD_IN)) * super.getQuantity();
 	}
 	
 	
@@ -110,13 +111,30 @@ public class Coffee extends MenuItem implements Customizable  {
 		return false;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Coffee) {
+			Coffee other = (Coffee)obj;
+			
+			String shortOther = other.toString().substring(ELEVEN);
+			String shortThis = this.toString().substring(ELEVEN);
+			
+			return shortOther.equals(shortThis);
+		}
+		
+		
+		return false;
+	}
+	
+	
+	
 	/**
 	 * 
 	 * @return
 	 */
 	@Override
 	public String toString() {
-		String myCoffee = "Coffee (" + this.quantity + ") ";
+		String myCoffee = "Coffee (" + this.getQuantity() + ") ";
 		switch(this.size) 
 		{
 			case SHORT:

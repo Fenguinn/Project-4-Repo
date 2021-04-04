@@ -89,6 +89,24 @@ public class Donut extends MenuItem {
 		}
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Donut) {
+			Donut other = (Donut)obj;
+			
+			String shortOther = other.toString().substring(other.toString().length()-3);
+			String shortThis = this.toString().substring(this.toString().length()-3);
+			
+			return shortOther.equals(shortThis);
+		}
+		
+		
+		return false;
+	}
+	
+	
+	
+	
 	/**
 	 * 
 	 */
@@ -130,7 +148,7 @@ public class Donut extends MenuItem {
 			}
 		}
 		
-		myDonut = myDonut + super.quantity + ")";
+		myDonut = myDonut + super.getQuantity() + ")";
 		
 		return myDonut;
 	}
