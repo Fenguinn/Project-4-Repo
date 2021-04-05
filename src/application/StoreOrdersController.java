@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 import javafx.scene.control.TextField;
-
+import javafx.stage.Stage;
 import javafx.scene.control.TextArea;
 
 import javafx.scene.control.ComboBox;
@@ -30,26 +30,55 @@ public class StoreOrdersController {
 		for (int x =0; x < MMController.myStore.getSize(); x++) {
 			this.OrderNumberBoxs.getItems().add(x+1);
 		}
+		if (OrderNumberBoxs.getItems().isEmpty()) {
+			return;
+		}
 		this.OrderNumberBoxs.setValue(ONE);
+		
 		this.update();
 	}
 	
 	private void update() {
+		if (OrderNumberBoxs.getItems().isEmpty()) {
+			return;
+		}
 		int num = this.OrderNumberBoxs.getValue() - 1;
+		
 		this.TextArea.setText(MMController.myStore.getOrder(num).toString());
 		this.TotalBox.setText(MMController.myStore.getOrder(num).getTotal());
+		
 	}
 	
 	@FXML
 	private void cancelThisOrder() {
+		try {
 		int num = this.OrderNumberBoxs.getValue() - 1;
 		this.OrderNumberBoxs.getItems().remove(MMController.myStore.getSize()-ONE);
 		MMController.myStore.remove(MMController.myStore.getOrder(num));
+		
+		
+		if (this.OrderNumberBoxs.getItems().isEmpty()) {
+			this.TextArea.clear();
+			this.TotalBox.clear();
+		}
+		
 		this.update();
+		}
+		catch (Exception e) {
+			
+		}
 	}
 	
 	@FXML 
 	private void handleOrder(ActionEvent e) {
 		this.update();
 	}
+	
+	@FXML
+	private void exportOrder(ActionEvent e) {
+		MMController.myStore.exportDatabase();
+	}
+	
+	
+	
 }

@@ -48,7 +48,6 @@ public class MMController {
 			stage.show();
 		}
 		catch (Exception e) {
-			System.out.println("EXCEPTION GENT");
 		}
 	}
 	
@@ -64,7 +63,6 @@ public class MMController {
 				stage.show();
 			}
 			catch (Exception e) {
-				System.out.println("EXCEPTION GENT");
 			}
 		}
 		
@@ -81,7 +79,6 @@ public class MMController {
 				stage.show();
 			}
 			catch (Exception e) {
-				System.out.println("EXCEPTION GENT1");
 			}
 		}
 		
@@ -97,7 +94,6 @@ public class MMController {
 				stage.show();
 			}
 			catch (Exception e) {
-				System.out.println("EXCEPTION GENT");
 			}
 		}
 	

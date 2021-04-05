@@ -58,6 +58,17 @@ public class CurrentOrderController {
 	
 	@FXML
 	private void placeMyOrder() {
+		if (MMController.myOrder.isEmpty()) {
+			Alert confirmation = new Alert(AlertType.WARNING);
+			confirmation.setTitle("WARNING!");
+			confirmation.setHeaderText("Warning");
+			confirmation.setContentText("You have an empty order. Please select some donuts and coffee :)");
+			confirmation.show();
+			return;
+		}
+		
+		
+		
 		if (MMController.myOrder != null) {
 			
 			

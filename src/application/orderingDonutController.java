@@ -151,6 +151,15 @@ public class orderingDonutController {
 	 */
 	@FXML
 	public void addToOrder() {
+		if (myDonuts.isEmpty()) {
+			Alert confirmation = new Alert(AlertType.WARNING);
+			confirmation.setTitle("WARNING!");
+			confirmation.setHeaderText("Warning");
+			confirmation.setContentText("Please pick a donut!");
+			confirmation.show();
+			return;
+		}
+		
 		
 		Alert confirmation = new Alert(AlertType.INFORMATION);
 		confirmation.setTitle("Confirmation");

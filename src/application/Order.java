@@ -44,6 +44,10 @@ public class Order implements Customizable {
 		return item.formatPrice(this.salesTax);
 	}
 	
+	public boolean isEmpty() {
+		return this.items.isEmpty();
+	}
+	
 	
 	
 	
@@ -91,6 +95,18 @@ public class Order implements Customizable {
 			}
 		}
 		
+		return false;
+	}
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Order) {
+			Order newOrder = (Order)obj;
+			if (this.toString().equals(newOrder.toString())) {
+				return true;
+			}
+		}
 		return false;
 	}
 	
