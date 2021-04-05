@@ -14,6 +14,12 @@ import javafx.scene.control.ComboBox;
 
 import javafx.scene.control.TextArea;
 
+/**
+ * This controller class provides the functionality for ordering donuts.
+ * This is the controller class of the "Ordering Donuts.fxml" Window.
+ * @author Abdullah Salem, Gent Blaku
+ *
+ */
 public class orderingDonutController {
 	public final static int ZERO = 0;
 	public final static int ONE = 1;
@@ -49,7 +55,7 @@ public class orderingDonutController {
 	private Button addToOrderDonutButton;
 
 	/**
-	 * 
+	 * This function is called automatically. It gives the combo box it's options.
 	 */
 	@FXML
 	public void initialize() {
@@ -64,7 +70,7 @@ public class orderingDonutController {
 	}
 	
 	/**
-	 * 
+	 * This is a helper function that is called several times through out the class. It changes the page to match any changes made by the user.
 	 */
 	@FXML
 	public void update() {
@@ -82,7 +88,9 @@ public class orderingDonutController {
 		this.runningTotalDonut.setText(formatter.formatPrice(subtotal));
 	}
 	
-	
+	/**
+	 * This function is called when the combobox is interacted with and updates the selection to reflect what is available for the current donut type.
+	 */
 	@FXML
 	public void pickedType() {
 		if (donutTypeComboBox.getValue() == "Yeast") {
@@ -105,7 +113,7 @@ public class orderingDonutController {
 	}
 	
 	/**
-	 * 
+	 * This function takes a selected item of a specific type and flavor into the list
 	 */
 	@FXML
 	public void addToList() {
@@ -130,7 +138,7 @@ public class orderingDonutController {
 	
 
 	/**
-	 * 
+	 * This methods removes a selected item from the list.
 	 */
 	@FXML
 	public void removeFromList() {
@@ -147,7 +155,7 @@ public class orderingDonutController {
 	}
 	
 	/**
-	 * 
+	 * This method adds the selected items to the order.
 	 */
 	@FXML
 	public void addToOrder() {

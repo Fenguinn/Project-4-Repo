@@ -12,6 +12,12 @@ import javafx.scene.control.TextArea;
 
 import javafx.scene.control.ComboBox;
 
+/**
+ * A controller class that provides the functionality to manage multiple orders
+ * This is the controller class of the "Store orders page.fxml" Window.
+ * @author Abdullah Salem, Gent Blaku
+ *
+ */
 public class StoreOrdersController {
 	private static final int ONE = 1;
 	
@@ -26,6 +32,9 @@ public class StoreOrdersController {
 	@FXML
 	private ComboBox<Integer> OrderNumberBoxs;
 	
+	/**
+	 * This function is called automatically. It gives the combo box it's options.
+	 */
 	@FXML
 	private void initialize () {
 		for (int x =0; x < MMController.myStore.getSize(); x++) {
@@ -39,6 +48,9 @@ public class StoreOrdersController {
 		this.update();
 	}
 	
+	/**
+	 * This is a helper function that is called several times through out the class. It changes the page to match any changes made by the user.
+	 */
 	private void update() {
 		if (OrderNumberBoxs.getItems().isEmpty()) {
 			return;
@@ -50,6 +62,9 @@ public class StoreOrdersController {
 		
 	}
 	
+	/**
+	 * This function is called when the cancel order button is clicked. It removes the selected order from the list.
+	 */
 	@FXML
 	private void cancelThisOrder() {
 		try {
@@ -70,11 +85,19 @@ public class StoreOrdersController {
 		}
 	}
 	
+	/**
+	 * Switching through the combo box calls this function. It calls the update helper function to dynamically shows the order on the textbox.
+	 * @param e, A generic action that is checked 
+	 */
 	@FXML 
 	private void handleOrder(ActionEvent e) {
 		this.update();
 	}
 	
+	/**
+	 * Clicking the export button calls this function. It exports all the orders into a txt file
+	 * @param e, A generic action that is checked 
+	 */
 	@FXML
 	private void exportOrder(ActionEvent e) {
 		if (MMController.myStore.getSize() <= 0){
