@@ -80,7 +80,15 @@ public class Order implements Customizable {
 					return true;
 				}
 			}
-
+		}
+		else if (obj instanceof String) {
+			String item = (String)obj;
+			for (int x = 0; x < items.size(); x++) {
+				if (items.get(x).toString().equals(item)) {
+					items.remove(x);
+					return true;
+				}
+			}
 		}
 		
 		return false;

@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="447.0" prefWidth="507.0" style="-fx-background-color: Aquamarine;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.orderingDonutController">
+<BorderPane prefHeight="447.0" prefWidth="507.0" style="-fx-background-color: Aquamarine;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.orderingDonutController">
    <top>
       <Label text="Ordering Donuts" BorderPane.alignment="CENTER">
          <font>
@@ -51,21 +50,16 @@
                   <Insets bottom="100.0" left="30.0" />
                </GridPane.margin>
             </ComboBox>
-            <Button fx:id="addDonutButton" mnemonicParsing="false" text="Add &gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="addDonutButton" mnemonicParsing="false" onAction="#addToList" text="Add &gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="25.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="removeDonutButton" mnemonicParsing="false" text="Remove" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="removeDonutButton" mnemonicParsing="false" onAction="#removeFromList" text="&lt;&lt;Remove" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="25.0" top="100.0" />
+                  <Insets left="14.0" top="100.0" />
                </GridPane.margin>
             </Button>
-            <TextArea fx:id="donutOrderTextArea" editable="false" maxHeight="150.0" maxWidth="150.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets left="40.0" />
-               </GridPane.margin>
-            </TextArea>
             <TextField fx:id="runningTotalDonut" editable="false" maxWidth="75.0" promptText="\$0.00" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="20.0" />
@@ -84,11 +78,16 @@
                   <Image url="@../../Images/donuts-getty-0619.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="addToOrderDonutButton" mnemonicParsing="false" text="Add to Order" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button fx:id="addToOrderDonutButton" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="65.0" />
                </GridPane.margin>
             </Button>
+            <ListView fx:id="donutOrderTextArea" maxHeight="160.0" maxWidth="149.0" prefHeight="160.0" prefWidth="149.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+            </ListView>
          </children>
       </GridPane>
    </left>

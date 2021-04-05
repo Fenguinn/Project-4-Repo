@@ -6,9 +6,21 @@ import java.util.ArrayList;
 
 
 public class StoreOrders implements Customizable {
-	private ArrayList<Order> storeOrders;
+	private ArrayList<Order> storeOrdersList;
 	
 	
+	
+	public StoreOrders() {
+		storeOrdersList = new ArrayList<Order>();
+	}
+	
+	public int getSize() {
+		return this.storeOrdersList.size();
+	}
+	
+	public Order getOrder(int index) {
+		return this.storeOrdersList.get(index);
+	}
 	
 	
 	
@@ -16,7 +28,7 @@ public class StoreOrders implements Customizable {
 	public boolean add(Object obj) {
 		if (obj instanceof Order) {
 			Order order = (Order)obj;
-			storeOrders.add(order);
+			this.storeOrdersList.add(order);
 			return true;
 		}
 		return false;
@@ -28,7 +40,7 @@ public class StoreOrders implements Customizable {
 	public boolean remove(Object obj) {
 		if (obj instanceof Order) {
 			Order order = (Order)obj;
-			storeOrders.remove(order);
+			this.storeOrdersList.remove(order);
 			return true;
 		}		
 		return false;
@@ -37,12 +49,12 @@ public class StoreOrders implements Customizable {
 	@Override
 	public String toString() {
 		//CHECK THAT ORDERS ARE NOT EMPTY1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		if (storeOrders.isEmpty())
+		if (this.storeOrdersList.isEmpty())
 			return null;
 		
 		String currString="";
-		for (int i=0; i<storeOrders.size(); i++) {
-			currString = currString + storeOrders.get(i).toString() + "\n";
+		for (int i=0; i<this.storeOrdersList.size(); i++) {
+			currString = currString + this.storeOrdersList.get(i).toString() + "\n";
 		}
 		return currString;
 	}

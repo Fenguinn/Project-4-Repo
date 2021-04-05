@@ -1,5 +1,7 @@
 package application;
 
+import java.io.FileNotFoundException;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,6 +17,7 @@ import javafx.stage.StageStyle;
 public class MMController {
 	
 	public static Order myOrder = new Order();
+	public static StoreOrders myStore = new StoreOrders();
 	
 	/**
 	 * 
@@ -78,7 +81,7 @@ public class MMController {
 				stage.show();
 			}
 			catch (Exception e) {
-				System.out.println("EXCEPTION GENT");
+				System.out.println("EXCEPTION GENT1");
 			}
 		}
 		

@@ -9,7 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ComboBox;
 
 import javafx.scene.control.CheckBox;
-
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 //DONT FORGET TO DO ALERTS
 //DONT FORGET TO DO ALERTS
@@ -64,6 +65,7 @@ public class CoffeeController {
 		
 		CoffeeSize.getItems().addAll("Short" , "Tall", "Grande" , "Venti");
 		NumberOfCoffee.getItems().addAll( ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE);
+		update();
 	}
 	@FXML
 	private void update() {
@@ -153,23 +155,28 @@ public class CoffeeController {
 	
 	@FXML
 	private void addToOrder(ActionEvent e) {
-		RunningTotal.setText("gent1");
+		
+		Alert confirmation = new Alert(AlertType.INFORMATION);
+		confirmation.setTitle("Confirmation");
+		confirmation.setHeaderText("Confirmation");
+		confirmation.setContentText("Coffee has been added to Order");
+		confirmation.show();
+		
+		//RunningTotal.setText("gent1");
 		MMController.myOrder.add(myCoffee);
-		RunningTotal.setText("gent2");
 		Cream.setSelected(false); 
 		Milk.setSelected(false);
 		Caramel.setSelected(false);
 		WhippedCream.setSelected(false);
 		Syrup.setSelected(false);
-//		CoffeeSize.setValue("Short");
-		//NumberOfCoffee.setValue(ONE);
-		RunningTotal.setText("gent3");
 		
 		myCoffee = new Coffee();
 	
 		String size = CoffeeSize.getValue();
-		RunningTotal.setText("gent4");
-		if (size.equals("Short")) {
+		if(size == null) {
+			myCoffee.setSize(ONE);
+		}
+		else if (size.equals("Short")) {
 			myCoffee.setSize(ONE);
 		}
 		else if (size.equals("Tall")) {
@@ -181,11 +188,10 @@ public class CoffeeController {
 		else if (size.equals("Venti")) {
 			myCoffee.setSize(FOUR);
 		}
-		RunningTotal.setText("gent4");
 		
-		int quantity = NumberOfCoffee.getValue();
-		myCoffee.setQuantity(quantity);
-		RunningTotal.setText("gent5");
+		NumberOfCoffee.setValue(ONE);
+		myCoffee.setQuantity(ONE);
+		update();
 	}
 
 	

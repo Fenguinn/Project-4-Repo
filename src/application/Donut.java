@@ -14,6 +14,7 @@ public class Donut extends MenuItem {
 	private static final int ONE = 1;
 	private static final int TWO = 2;
 	private static final int THREE = 3;
+	private static final int FIVE = 5;
 	private static final int YEAST = 1;
 	private static final int CAKE = 2;
 	private static final int HOLE = 3;
@@ -89,13 +90,21 @@ public class Donut extends MenuItem {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
+	public double itemPrice() {
+		return super.getPrice() * super.getQuantity();
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Donut) {
 			Donut other = (Donut)obj;
 			
-			String shortOther = other.toString().substring(other.toString().length()-3);
-			String shortThis = this.toString().substring(this.toString().length()-3);
+			String shortOther = other.toString().substring(0,other.toString().length()-FIVE);
+			String shortThis = this.toString().substring(0, this.toString().length()-FIVE);
 			
 			return shortOther.equals(shortThis);
 		}
@@ -116,39 +125,39 @@ public class Donut extends MenuItem {
 		
 		if (this.myType == DonutTypes.YEASTDONUT) {
 			if (this.myYFlav == YeastFlavors.JELLYFILLED) {
-				myDonut = myDonut + "jelly filled(";
+				myDonut = new String(myDonut + "jelly filled(");
 			}
 			else if (this.myYFlav == YeastFlavors.BOSTONKREME) {
-				myDonut = myDonut + "boston kreme(";
+				myDonut = new String(myDonut + "boston kreme(");
 			}
 			else if (this.myYFlav == YeastFlavors.STRAWBERRYLEMONSWIRL) {
-				myDonut = myDonut + "strawberry-lemon swirl(";
+				myDonut = new String(myDonut + "strawberry-lemon swirl(");
 			}
 		}
 		else if (this.myType == DonutTypes.CAKEDONUT) {
 			if (this.myCFlav == CakeFlavors.BLUEBERRYCAKE) {
-				myDonut = myDonut + "blueberry cake(";
+				myDonut = new String(myDonut + "blueberry cake(");
 			}
 			else if (this.myCFlav == CakeFlavors.ICECREAMCAKE) {
-				myDonut = myDonut + "ice-creame cake(";
+				myDonut = new String(myDonut + "ice-creame cake(");
 			}
 			else if (this.myCFlav == CakeFlavors.MAPLEFROSTED) {
-				myDonut = myDonut + "maple frosted(";
+				myDonut = new String(myDonut + "maple frosted(");
 			}
 		}
 		else if (this.myType == DonutTypes.DONUTHOLES) {
 			if (this.myHFlav == HoleFlavors.BERRYBEAUTIFUL) {
-				myDonut = myDonut + "berry beautiful(";
+				myDonut = new String(myDonut + "berry beautiful(");
 			}
 			else if (this.myHFlav == HoleFlavors.CHOCOLOCO) {
-				myDonut = myDonut + "choco loco(";
+				myDonut = new String(myDonut + "choco loco(");
 			}
 			else if (this.myHFlav == HoleFlavors.GLAZED) {
-				myDonut = myDonut + "glazed(";
+				myDonut = new String(myDonut + "glazed(");
 			}
 		}
 		
-		myDonut = myDonut + super.getQuantity() + ")";
+		myDonut = new String(myDonut + super.getQuantity() + ")");
 		
 		return myDonut;
 	}
