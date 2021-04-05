@@ -64,7 +64,7 @@ public class StoreOrders implements Customizable {
 	public void exportDatabase() {
 		try {
 			FileWriter writer = new FileWriter("storeOrders.txt");
-			writer.write("WOWOWOWO TEST OW OW OWKEOQ KOJKROK");
+			writer.write(this.toString());
 			writer.close();
 		}
 		

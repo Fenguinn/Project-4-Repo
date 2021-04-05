@@ -30,7 +30,7 @@
                   <Insets right="90.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="ExportButton" mnemonicParsing="false" text="Export Orders">
+            <Button fx:id="ExportButton" mnemonicParsing="false" onAction="#exportOrder" text="Export Orders">
                <HBox.margin>
                   <Insets right="110.0" />
                </HBox.margin>

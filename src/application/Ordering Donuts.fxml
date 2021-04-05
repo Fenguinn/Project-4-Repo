@@ -45,7 +45,7 @@
                   <Insets left="15.0" right="15.0" />
                </GridPane.margin>
             </ListView>
-            <ComboBox fx:id="numDonutComboBox" maxHeight="20.0" maxWidth="43.0" prefWidth="150.0" promptText="1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBox fx:id="numDonutComboBox" maxHeight="20.0" maxWidth="55.0" prefWidth="150.0" promptText="1" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="100.0" left="30.0" />
                </GridPane.margin>
