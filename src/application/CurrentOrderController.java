@@ -10,7 +10,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
-
+/**
+ * This Controller class is for the current order menu
+ * and allows for storing and manipulation of the user's order of Coffee and/or Donuts.
+ * @author Abdullah Salem, Gent Blaku
+ *
+ */
 public class CurrentOrderController {
 	
 	
@@ -29,12 +34,24 @@ public class CurrentOrderController {
 	private Button RemoveSelectedButton;
 	@FXML
 	private Button PlaceOrderButton;
-
+	
+	
+	
+	
+	/**
+	 * This method initializes the scene for the current order.
+	 */
 	@FXML
 	private void initialize() {
 		update();
 	}
 	
+	
+	
+	
+	/**
+	 * This helper method updates the current page to match any changes made by the user.
+	 */
 	@FXML
 	private void update() {
 		MMController.myOrder.calculatePayment();
@@ -49,6 +66,13 @@ public class CurrentOrderController {
 		TotalBox.setText(""+MMController.myOrder.getTotal());	
 	}
 	
+	
+	
+	
+	
+	/**
+	 * This method removes an Object from the current order
+	 */
 	@FXML
 	private void removeItem() {
 		String badItem = this.TextArea.getSelectionModel().getSelectedItem();
@@ -56,6 +80,12 @@ public class CurrentOrderController {
 		update();
 	}
 	
+	
+	
+	
+	/**
+	 * This method adds the current order to store orders and is triggered when the user clicks the Place Order button.
+	 */
 	@FXML
 	private void placeMyOrder() {
 		if (MMController.myOrder.isEmpty()) {

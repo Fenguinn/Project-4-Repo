@@ -1,5 +1,9 @@
 package application;
-
+/**
+ * This class holds properties of the Donut object, such as type, flavor, quantity.
+ * @author Abdullah Salem, Gent Blaku
+ *
+ */
 public class Donut extends MenuItem {
 	
 	enum DonutTypes { YEASTDONUT, CAKEDONUT, DONUTHOLES} 
@@ -27,6 +31,12 @@ public class Donut extends MenuItem {
 	private CakeFlavors myCFlav;
 	private HoleFlavors myHFlav;
 	
+	/**
+	 * This constructor initializes a Donut object with it's properties.
+	 * @param number the number of donuts
+	 * @param type the type of donut e.g. yeast
+	 * @param flavor the donut flavor e.g. jelly filled
+	 */
 	public Donut(int number, int type, int flavor) {
 		super();
 		super.setQuantity(number);
@@ -91,13 +101,22 @@ public class Donut extends MenuItem {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * This method fetches the price of a Donut object.
+	 * @return a double, the price of a Donut object.
 	 */
 	public double itemPrice() {
 		return super.getPrice() * super.getQuantity();
 	}
 	
+	
+	
+	
+	
+	/**
+	 * This method checks if two Donut objects are equal.
+	 * @param Donut object to be checked against
+	 * @return true if the objects are equal, false if not.
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Donut) {
@@ -117,7 +136,8 @@ public class Donut extends MenuItem {
 	
 	
 	/**
-	 * 
+	 * This method returns a String representation of a Donut object.
+	 * @return String representation of a Donut object.
 	 */
 	@Override
 	public String toString() {

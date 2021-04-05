@@ -1,5 +1,9 @@
 package application;
-
+/**
+ * This class holds properties of Coffee objects like add-ins, size, quantity
+ * @author Abdullah Salem, Gent Blaku
+ *
+ */
 public class Coffee extends MenuItem implements Customizable  {
 	private static final double COFFEE_PRICE_DEFAULT = 1.49; // the price of a small coffee - 50 cents
 	private static final double  PRICE_PER_ADD_IN= 0.20;
@@ -19,10 +23,17 @@ public class Coffee extends MenuItem implements Customizable  {
 	private int numOfAddIns;
 	private int size;
 	
+	/** 
+	 * Constructor for the Coffee class
+	 */
 	public Coffee() {
 		super(COFFEE_PRICE_DEFAULT, ONE);
 	}
 	
+	/**
+	 * Sets the size of a Coffee object
+	 * @param newSize the desired size
+	 */
 	public void setSize(int newSize) {
 		this.size = newSize;
 	}
@@ -38,8 +49,9 @@ public class Coffee extends MenuItem implements Customizable  {
 	
 	
 	/**
-	 * 
-	 * @return
+	 * A method that adds add-ins to a Coffee Object, such as cream or syrup.
+	 * @param object to be added to the add-ins for Coffee
+	 * @return true if add-in successful, false if not.
 	 */
 	@Override 
 	public boolean add(Object obj) {
@@ -75,8 +87,9 @@ public class Coffee extends MenuItem implements Customizable  {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * A method that removes add-ins from a Coffee object.
+	 * @param object to be added in as an add-in for the Coffee
+	 * @return true if add-in removed, false if not.
 	 */
 	@Override
 	public boolean remove(Object obj) {
@@ -111,6 +124,11 @@ public class Coffee extends MenuItem implements Customizable  {
 		return false;
 	}
 	
+	/**
+	 * A method that checks if one coffee object is equal to another.
+	 * @param Coffee object to be checked against
+	 * @return true if equal, false if not
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Coffee) {
@@ -129,8 +147,8 @@ public class Coffee extends MenuItem implements Customizable  {
 	
 	
 	/**
-	 * 
-	 * @return
+	 * This method returns the string representation of a Coffee object.
+	 * @return String representation of Coffee object
 	 */
 	@Override
 	public String toString() {

@@ -12,12 +12,11 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-//DONT FORGET TO DO ALERTS
-//DONT FORGET TO DO ALERTS
-//DONT FORGET TO DO ALERTS
-//DONT FORGET TO DO ALERTS
-//DONT FORGET TO DO ALERTS
-//DONT FORGET TO DO ALERTS
+/**
+ * This class is a Controller for the Coffee menu and allows users to add Coffee to their order.
+ * @author Abdullah Salem, Gent Blaku
+ *
+ */
 
 public class CoffeeController {
 	public final static int ONE = 1;
@@ -56,7 +55,7 @@ public class CoffeeController {
 	
 	
 	/**
-	 * 
+	 * This method initializes the scene as well as some default options for the user
 	 */
 	@FXML
 	private void initialize() {
@@ -67,6 +66,9 @@ public class CoffeeController {
 		NumberOfCoffee.getItems().addAll( ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE);
 		update();
 	}
+	/**
+	 * This helper method updates the current page to match any changes made by the user.
+	 */
 	@FXML
 	private void update() {
 		
@@ -74,7 +76,10 @@ public class CoffeeController {
 		RunningTotal.setText(myCoffee.formatPrice(total));
 	}
 	
-	
+	/**
+	 * This function is called when the Cream option is selected, it adds Cream to the Coffee Object.
+	 * @param e event checking the box.
+	 */
 	@FXML
 	private void handleCream(ActionEvent e){
 		if (Cream.isSelected()) 
@@ -84,7 +89,10 @@ public class CoffeeController {
             myCoffee.remove("Cream");
 		update();
     }
-	
+	/**
+	 * This function is called when the Syrup option is selected, it adds Syrup to the Coffee Object.
+	 * @param e event checking the box.
+	 */
 	@FXML
 	private void handleSyrup(ActionEvent e){
 		if (Syrup.isSelected()) 
@@ -94,7 +102,10 @@ public class CoffeeController {
             myCoffee.remove("Syrup");
 		update();
     }
-	
+	/**
+	 * This function is called when the Milk option is selected, it adds Milk to the Coffee Object.
+	 * @param e event checking the box.
+	 */
 	@FXML
 	private void handleMilk(ActionEvent e){
 		if (Milk.isSelected()) 
@@ -104,7 +115,10 @@ public class CoffeeController {
             myCoffee.remove("Milk");
 		update();
     }
-	
+	/**
+	 * This function is called when the Caramel option is selected, it adds Caramel to the Coffee Object.
+	 * @param e event checking the box.
+	 */
 	@FXML
 	private void handleCaramel(ActionEvent e){
 		if (Caramel.isSelected()) 
@@ -114,7 +128,10 @@ public class CoffeeController {
             myCoffee.remove("Caramel");
 		update();
     }
-	
+	/**
+	 * This function is called when the Whipped Cream option is selected, it adds Whipped Cream to the Coffee Object.
+	 * @param e event checking the box.
+	 */
 	@FXML
 	private void handleWhippedCream(ActionEvent e){
 		if (WhippedCream.isSelected()) 
@@ -124,7 +141,10 @@ public class CoffeeController {
             myCoffee.remove("Whipped Cream");
 		update();
     }
-	
+	/**
+	 * This function is called when the Coffee size is selected, it adds the size to the Coffee object.
+	 * @param e event of picking the size e.g Venti, Grande
+	 */
 	@FXML 
 	private void handleSize(ActionEvent e) {
 		String size = CoffeeSize.getValue();
@@ -144,7 +164,10 @@ public class CoffeeController {
 		update();
 		//RunningTotal.setText(myCoffee.toString());
 	}
-	
+	/**
+	 * This function is called when the quantity of Coffee is selected it adds the quantity to the Coffee object.
+	 * @param e event of picking the quantity e.g 1, 2
+	 */
 	@FXML
 	private void handleQuantity(ActionEvent e) {
 		Integer quantity = NumberOfCoffee.getValue();
@@ -152,7 +175,10 @@ public class CoffeeController {
 		update();
 		//RunningTotal.setText(""+myCoffee.getQuantity());
 	}
-	
+	/**
+	 * This function is called when user clicks Add to Order, it adds a Coffee Object to the current Order
+	 * @param e event of clicking the add to order button
+	 */
 	@FXML
 	private void addToOrder(ActionEvent e) {
 		

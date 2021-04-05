@@ -9,11 +9,18 @@ import javafx.scene.layout.BorderPane;
 
 
 
-
+/**
+ * This class serves as a driver for the GUI.
+ * @author Abdullah Salem, Gent Blaku
+ *
+ */
 
 public class Main extends Application {
 	
-	
+	/**
+	 * This method starts the GUI.
+	 * @param primaryStage the main menu stage.
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -28,7 +35,10 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Launches the Gui.
+	 * @param args the stage
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

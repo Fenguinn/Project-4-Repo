@@ -1,7 +1,5 @@
 package application;
 
-import java.io.FileNotFoundException;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,18 +7,20 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
+/**
+ * This class is the controller for the Main Menu and allows for data to be manipulated based on the user's actions
+ * @author Abdullah Salem, Gent Blaku
+ *
+ */
 public class MMController {
 	
 	public static Order myOrder = new Order();
 	public static StoreOrders myStore = new StoreOrders();
 	
 	/**
-	 * 
+	 * This method initializes the main menu scene.
 	 */
 	@FXML
 	public void initialize() {
@@ -37,6 +37,10 @@ public class MMController {
 	private ImageView StoreOrders;
 
 	// Event Listener on ImageView[#mmDonutImage].onMouseClicked
+	/**
+	 * This method opens the Donut menu. This is called when the Donut image is clicked.
+	 * @param event clicking of the Donut image.
+	 */
 	@FXML
 	public void openDonutPage(MouseEvent event) {
 		try {
@@ -52,6 +56,10 @@ public class MMController {
 	}
 	
 	// Event Listener on ImageView[#mmCoffeeImage].onMouseClicked
+	/**
+	 * This method opens the Coffee menu. This is called when the Coffee image is clicked.
+	 * @param event clicking of the Coffee image.
+	 */
 		@FXML
 		public void openCoffeePage(MouseEvent event) {
 			try {
@@ -68,6 +76,10 @@ public class MMController {
 		
 		
 		// Event Listener on ImageView[#mmYourOrdersImage].onMouseClicked
+		/**
+		 * This method opens the Order page. This is called when the Orders image is clicked.
+		 * @param event clicking of the Orders image.
+		 */
 		@FXML
 		public void openYourOrdersPage(MouseEvent event) {
 			try {
@@ -83,6 +95,10 @@ public class MMController {
 		}
 		
 		// Event Listener on ImageView[#mmStoreOrdersImage].onMouseClicked
+		/**
+		 * This method opens the Store Orders page. This is called when the Store Orders image is clicked.
+		 * @param event clicking of the Store Orders image.
+		 */
 		@FXML
 		public void openStoreOrdersPage(MouseEvent event) {
 			try {
