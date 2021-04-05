@@ -50,7 +50,7 @@ public class Coffee extends MenuItem implements Customizable  {
 	
 	/**
 	 * A method that adds add-ins to a Coffee Object, such as cream or syrup.
-	 * @param object to be added to the add-ins for Coffee
+	 * @param obj object to be added to the add-ins for Coffee
 	 * @return true if add-in successful, false if not.
 	 */
 	@Override 
@@ -88,7 +88,7 @@ public class Coffee extends MenuItem implements Customizable  {
 	
 	/**
 	 * A method that removes add-ins from a Coffee object.
-	 * @param object to be added in as an add-in for the Coffee
+	 * @param obj object to be added in as an add-in for the Coffee
 	 * @return true if add-in removed, false if not.
 	 */
 	@Override
@@ -126,7 +126,7 @@ public class Coffee extends MenuItem implements Customizable  {
 	
 	/**
 	 * A method that checks if one coffee object is equal to another.
-	 * @param Coffee object to be checked against
+	 * @param obj Coffee object to be checked against
 	 * @return true if equal, false if not
 	 */
 	@Override

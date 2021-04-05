@@ -12,7 +12,6 @@ import javafx.scene.control.ListView;
 
 import javafx.scene.control.ComboBox;
 
-import javafx.scene.control.TextArea;
 
 /**
  * This controller class provides the functionality for ordering donuts.
@@ -58,7 +57,7 @@ public class orderingDonutController {
 	 * This function is called automatically. It gives the combo box it's options.
 	 */
 	@FXML
-	public void initialize() {
+	private void initialize() {
 		this.myDonuts = new ArrayList<Donut>();
 		this.donutTypeComboBox.getItems().addAll("Yeast" , "Donut Hole", "Cake Donut");
 		this.numDonutComboBox.getItems().addAll(ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE);
@@ -73,7 +72,7 @@ public class orderingDonutController {
 	 * This is a helper function that is called several times through out the class. It changes the page to match any changes made by the user.
 	 */
 	@FXML
-	public void update() {
+	private void update() {
 		this.donutOrderTextArea.getItems().clear();
 		
 		double subtotal = 0;
@@ -92,7 +91,7 @@ public class orderingDonutController {
 	 * This function is called when the combobox is interacted with and updates the selection to reflect what is available for the current donut type.
 	 */
 	@FXML
-	public void pickedType() {
+	private void pickedType() {
 		if (donutTypeComboBox.getValue() == "Yeast") {
 			listDonutFlavor.getItems().clear();
 			listDonutFlavor.getItems().addAll("Jelly Filled", "Boston Kreme", "Strawberry Lemon Swirl");
@@ -116,7 +115,7 @@ public class orderingDonutController {
 	 * This function takes a selected item of a specific type and flavor into the list
 	 */
 	@FXML
-	public void addToList() {
+	private void addToList() {
 		String typeS = this.donutTypeComboBox.getValue();
 		int type = 0;
 		if (typeS.equals("Yeast")){
@@ -141,7 +140,7 @@ public class orderingDonutController {
 	 * This methods removes a selected item from the list.
 	 */
 	@FXML
-	public void removeFromList() {
+	private void removeFromList() {
 		try {
 			int badDonut = this.donutOrderTextArea.getSelectionModel().getSelectedIndex();
 			this.myDonuts.remove(badDonut);
@@ -158,7 +157,7 @@ public class orderingDonutController {
 	 * This method adds the selected items to the order.
 	 */
 	@FXML
-	public void addToOrder() {
+	private void addToOrder() {
 		if (myDonuts.isEmpty()) {
 			Alert confirmation = new Alert(AlertType.WARNING);
 			confirmation.setTitle("WARNING!");

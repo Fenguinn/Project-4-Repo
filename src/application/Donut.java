@@ -114,7 +114,7 @@ public class Donut extends MenuItem {
 	
 	/**
 	 * This method checks if two Donut objects are equal.
-	 * @param Donut object to be checked against
+	 * @param obj Donut object to be checked against
 	 * @return true if the objects are equal, false if not.
 	 */
 	@Override
